@@ -7,23 +7,35 @@ import React from "react";
 
 
 
-export default function LoginPage()
+export default function SignupPage()
 {   
     const [user, setUser] = React.useState({
         email: "",
-        password: ""
+        password: "",
+        username: ""
     })
 
-    const onLogin = async () => {
+    const onSignup = async () => {
         
     }
 
     return (
 
         <div className="flex flex-col items-center justify-center min-h-screen py-2">        
-                <h1>LOGIN</h1>
+                <h1>
+            SIGNUP
+            </h1>
                 <hr />
-
+                <label htmlFor="username">username</label>
+                <input
+                    className="p-2 border   text-black border-gray-300 rounded-lg mb-4 
+                    focus:outline-none focus:border-gray-600"
+                    type="text"
+                    id="username"
+                    value={user.username}
+                    onChange={(e) => setUser({ ...user, username: e.target.value })}
+                    placeholder="USERNAME"
+            />
             <label htmlFor="email">email</label>
                 <input
                     className="p-2 border  text-black border-gray-300 rounded-lg mb-4 
@@ -36,7 +48,7 @@ export default function LoginPage()
             /> 
             <label htmlFor="password">password</label>
                 <input
-                    className="p-2 border text-black border-gray-300 rounded-lg mb-4 
+                    className="p-2 border border-gray-300 rounded-lg mb-4 
                     focus:outline-none focus:border-gray-600"
                     type="password"
                     id="password"
@@ -45,10 +57,10 @@ export default function LoginPage()
                     placeholder="password"
             />  
             <button
-               onClick={onLogin} 
+               onClick={onSignup} 
                 className="p-2 border border-gray-300 rounded-lg mb-4
             focus:outline-none focus:border-gray-600"> Signup Here</button>
-            <Link href="/signup">Visit Signup Page</Link>            
+            <Link href="/login">Visit Login Page</Link>            
         </div>
         
 
